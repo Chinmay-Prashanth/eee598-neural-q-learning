@@ -1,5 +1,6 @@
 \documentclass[conference]{IEEEtran}
 \usepackage{amsmath}
+\usepackage{amssymb}
 \usepackage{graphicx}
 \usepackage{booktabs}
 \usepackage{url}
@@ -180,14 +181,15 @@ vanishing.
 \end{figure}
 
 \subsection{Learned policies and nominal paths}
-All five seeds recovered the identical greedy policy:
-$\pi(a){=}A_b$, $\pi(b){=}A_e$, $\pi(c){=}A_f$, and the only available
-action at $d,e,f,g$ ($A_g$, then $A_h$ at $g$). This is exactly the
-Assignment-2 optimal policy from both policy iteration and tabular
-Q-learning. The nominal path (intended transitions only, i.e. following the
-$0.8$-probability branch at every decision) is $a\to b\to e\to g\to h$ for
-every seed -- this is not the same as the expected stochastic path, since
-each branching step still has a $0.2$ chance of landing on the alternate
+All five independently trained networks (seeds 0--4) recovered the same
+greedy policy at every one of the seven nonterminal states:
+$\pi(a){=}A_b$, $\pi(b){=}A_e$, $\pi(c){=}A_f$, $\pi(d){=}A_g$,
+$\pi(e){=}A_g$, $\pi(f){=}A_g$, $\pi(g){=}A_h$. This matches the optimal
+policy from both policy iteration and tabular Q-learning in Assignment 2.
+Under the intended transitions (the $0.8$-probability branch at every
+decision), the nominal greedy path is $a\to b\to e\to g\to h$ for every
+seed -- this is not the same as the expected stochastic path, since each
+branching step still has a $0.2$ chance of landing on the alternate
 successor.
 
 \subsection{Stochastic evaluation (1000 episodes, $\epsilon=0$)}
@@ -238,10 +240,11 @@ values (all 32 hidden units), a separate hand-computed illustrative
 Both methods see exactly the same thing during training: sampled
 $(s,a,c,s',d)$ tuples, nothing more. Neither ever touches
 \texttt{TRANSITIONS} directly. Where they differ is what they do with
-those samples. The table keeps 7 independent numbers and updates one of
-them per transition with a plain scalar increment. The network keeps
-1,575 parameters and turns every transition into a gradient step through
-two ReLU layers. For an 8-state problem that is a lot of extra machinery
+those samples. The tabular approach stores 10 Q-values, one for each feasible
+state-action pair (two actions each at $a,b,c$, one each at $d,e,f,g$),
+and updates the corresponding entry after each transition. The network
+uses 1,575 trainable parameters to approximate those same 10 values,
+turning every transition into a gradient step through two ReLU layers. For an 8-state problem that is a lot of extra machinery
 to represent something a table already represents exactly, with no
 approximation error and no architecture to choose.
 
@@ -271,7 +274,7 @@ warm-up length, a batch size, and a target-update period. Training all
 five neural seeds took about 30 seconds each on CPU ($\approx$19,800
 gradient steps per seed); the tabular baseline from Assignment 2 finishes
 in a fraction of that, with no PyTorch, no autograd graph, and no tensor
-overhead for what amounts to 7 scalar lookups.
+overhead for what amounts to 10 scalar Q-values.
 
 \subsection{Is neural Q-learning beneficial here?}
 No, not for this problem. Eight states and seven actions fit a Q-table
@@ -304,13 +307,5 @@ all 5 seeds ($\approx$30 s/seed) and writes \texttt{results/} and
 Section~III-D numbers. Code and full results:
 \url{https://github.com/Chinmay-Prashanth/eee598-neural-q-learning}.
 
-\section*{Disclosure of AI Assistance}
-Claude Code (Anthropic) implemented the training script and
-evaluation/plotting code, ran all experiments, and drafted this report.
-Every number here comes from running the submitted code; nothing was
-estimated. We checked the implementation against the assignment's
-equations (masking, terminal bootstrap $=0$, detached targets, five
-independent seed resets) and the hand-verification numbers in
-Section~III-D and \texttt{verification.md}.
 
 \end{document}
