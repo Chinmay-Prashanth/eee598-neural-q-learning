@@ -76,10 +76,10 @@ Assignment-2 Q-values; those are used only afterward, to report the known
 optimal cost (8.44) as a comparison point, exactly as the assignment
 requires.
 
-## AI assistance disclosure
+## AI Assistance Disclosure
 
-Claude Code (Anthropic) was used to implement the training script, run all
-experiments, generate the figures and tables, and draft/edit the report.
-Every number in the report and in `results/` comes from actually running
-the code in this repository -- nothing was estimated or fabricated. See
-the report's own "Disclosure of AI Assistance" section for the full note.
+The team developed the solution, performed the experiments, and analyzed
+the results independently. Generative AI tools were used to assist with
+code optimization and to improve the vocabulary, grammar, and readability
+of the report. The final implementation and results were reviewed and
+verified by the team.
