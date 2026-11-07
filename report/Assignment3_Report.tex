@@ -238,15 +238,15 @@ values (all 32 hidden units), a separate hand-computed illustrative
 \section{Discussion}
 \subsection{Neural vs.\ tabular Q-learning}
 Both methods see exactly the same thing during training: sampled
-$(s,a,c,s',d)$ tuples, nothing more. Neither ever touches
+$(s,a,c,s',d)$ tuples, nothing more; neither ever touches
 \texttt{TRANSITIONS} directly. Where they differ is what they do with
-those samples. The tabular approach stores 10 Q-values, one for each feasible
+those samples. The tabular approach stores 10 Q-values, one per feasible
 state-action pair (two actions each at $a,b,c$, one each at $d,e,f,g$),
 and updates the corresponding entry after each transition. The network
 uses 1,575 trainable parameters to approximate those same 10 values,
-turning every transition into a gradient step through two ReLU layers. For an 8-state problem that is a lot of extra machinery
-to represent something a table already represents exactly, with no
-approximation error and no architecture to choose.
+turning every transition into a gradient step through two ReLU layers --
+a lot of extra machinery, on an 8-state problem, to represent something a
+table already represents exactly.
 
 Training stability tells a similar story. Assignment 2's tabular
 Q-learning converged to the exact optimal policy, zero gap, on all 5
@@ -265,10 +265,9 @@ On outcomes the two methods land in the same place. All five neural
 seeds recovered $a{\to}A_b$, $b{\to}A_e$, $c{\to}A_f$, matching tabular
 Q-learning and policy iteration exactly, and the evaluation means in
 Table~\ref{tab:eval} sit within about $\pm0.03$ of the $8.44$ optimum,
-well inside a single seed's own evaluation noise. Reproducibility across
-seeds is therefore a wash between the two methods here. What is not a
-wash is the knob count: the table needs a learning rate and an
-exploration schedule, full stop. The network needs those plus an
+well inside a single seed's own evaluation noise -- a wash between the
+two methods. The knob count is not: the table needs a learning rate and
+an exploration schedule, full stop; the network needs those plus an
 architecture, an optimizer and its learning rate, a replay capacity and
 warm-up length, a batch size, and a target-update period. Training all
 five neural seeds took about 30 seconds each on CPU ($\approx$19,800
@@ -307,5 +306,11 @@ all 5 seeds ($\approx$30 s/seed) and writes \texttt{results/} and
 Section~III-D numbers. Code and full results:
 \url{https://github.com/Chinmay-Prashanth/eee598-neural-q-learning}.
 
+\section*{AI Assistance Disclosure}
+The team developed the solution, performed the experiments, and analyzed
+the results independently. Generative AI tools were used to assist with
+code optimization and to improve the vocabulary, grammar, and readability
+of the report. The final implementation and results were reviewed and
+verified by the team.
 
 \end{document}
