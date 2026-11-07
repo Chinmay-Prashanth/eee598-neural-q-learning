@@ -1,0 +1,13 @@
+# copyrighted course material -- not for the public repo
+Assign3(team)-Neural Q-function (1).pdf
+
+# python
+__pycache__/
+*.pyc
+
+# LaTeX build artifacts
+report/*.aux
+report/*.log
+report/*.out
+report/*.synctex.gz
+report/compile_log*.txt

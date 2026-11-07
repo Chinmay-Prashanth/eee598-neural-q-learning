@@ -1,0 +1,6 @@
+seed,pi(a),pi(b),pi(c),pi(d),pi(e),pi(f),pi(g),nominal_path
+0,Ab,Ae,Af,Ag,Ag,Ag,Ah,a->b->e->g->h
+1,Ab,Ae,Af,Ag,Ag,Ag,Ah,a->b->e->g->h
+2,Ab,Ae,Af,Ag,Ag,Ag,Ah,a->b->e->g->h
+3,Ab,Ae,Af,Ag,Ag,Ag,Ah,a->b->e->g->h
+4,Ab,Ae,Af,Ag,Ag,Ag,Ah,a->b->e->g->h

@@ -1,0 +1,38 @@
+{
+  "input_dim": 8,
+  "hidden1": 32,
+  "hidden2": 32,
+  "output_dim": 7,
+  "activation": "ReLU",
+  "trainable_parameters": 1575,
+  "parameter_breakdown": {
+    "fc1 (8->32) weight": 256,
+    "fc1 bias": 32,
+    "fc2 (32->32) weight": 1024,
+    "fc2 bias": 32,
+    "fc3 (32->7) weight": 224,
+    "fc3 bias": 7
+  },
+  "hyperparameters": {
+    "hidden1": 32,
+    "hidden2": 32,
+    "replay_capacity": 10000,
+    "replay_warmup": 200,
+    "batch_size": 32,
+    "optimizer": "Adam",
+    "learning_rate": 0.001,
+    "target_update_every": 100,
+    "gamma": 1.0,
+    "n_episodes": 5000,
+    "eps_start": 1.0,
+    "eps_min": 0.05,
+    "eps_decay_episodes": 4000,
+    "seeds": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ]
+  }
+}

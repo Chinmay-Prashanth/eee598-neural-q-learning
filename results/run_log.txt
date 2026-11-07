@@ -1,0 +1,18 @@
+Trainable parameters: 1575
+seed 0: training done, 19801 optimization steps, final 100-episode mean cost = 8.560
+seed 0: policy={'a': 'Ab', 'b': 'Ae', 'c': 'Af', 'd': 'Ag', 'e': 'Ag', 'f': 'Ag', 'g': 'Ah'} nominal_path=a->b->e->g->h
+seed 0: eval mean=8.445 std=0.681 min=8.0 max=11.0 reach_h=100.0%
+seed 1: training done, 19801 optimization steps, final 100-episode mean cost = 8.440
+seed 1: policy={'a': 'Ab', 'b': 'Ae', 'c': 'Af', 'd': 'Ag', 'e': 'Ag', 'f': 'Ag', 'g': 'Ah'} nominal_path=a->b->e->g->h
+seed 1: eval mean=8.409 std=0.654 min=8.0 max=11.0 reach_h=100.0%
+seed 2: training done, 19801 optimization steps, final 100-episode mean cost = 8.420
+seed 2: policy={'a': 'Ab', 'b': 'Ae', 'c': 'Af', 'd': 'Ag', 'e': 'Ag', 'f': 'Ag', 'g': 'Ah'} nominal_path=a->b->e->g->h
+seed 2: eval mean=8.473 std=0.750 min=8.0 max=11.0 reach_h=100.0%
+seed 3: training done, 19801 optimization steps, final 100-episode mean cost = 8.460
+seed 3: policy={'a': 'Ab', 'b': 'Ae', 'c': 'Af', 'd': 'Ag', 'e': 'Ag', 'f': 'Ag', 'g': 'Ah'} nominal_path=a->b->e->g->h
+seed 3: eval mean=8.445 std=0.698 min=8.0 max=11.0 reach_h=100.0%
+seed 4: training done, 19801 optimization steps, final 100-episode mean cost = 8.440
+seed 4: policy={'a': 'Ab', 'b': 'Ae', 'c': 'Af', 'd': 'Ag', 'e': 'Ag', 'f': 'Ag', 'g': 'Ah'} nominal_path=a->b->e->g->h
+seed 4: eval mean=8.447 std=0.698 min=8.0 max=11.0 reach_h=100.0%
+Done. Figures written to C:\Users\chin1\dev\eee598\Assign3\code\..\figures
+Results written to C:\Users\chin1\dev\eee598\Assign3\code\..\results

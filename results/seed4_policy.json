@@ -1,0 +1,26 @@
+{
+  "policy": {
+    "a": "Ab",
+    "b": "Ae",
+    "c": "Af",
+    "d": "Ag",
+    "e": "Ag",
+    "f": "Ag",
+    "g": "Ah"
+  },
+  "nominal_path": [
+    "a",
+    "b",
+    "e",
+    "g",
+    "h"
+  ],
+  "evaluation": {
+    "mean_cost": 8.447,
+    "std_cost": 0.6983399449255919,
+    "min_cost": 8.0,
+    "max_cost": 11.0,
+    "pct_reached_h": 100.0,
+    "n_episodes": 1000
+  }
+}
