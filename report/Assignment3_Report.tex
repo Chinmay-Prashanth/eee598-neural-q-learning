@@ -289,8 +289,9 @@ already fits in one.
 \section{Conclusion}
 A small feedforward network trained with replay and a target network, on
 sampled transitions only, recovered the exact tabular-optimal policy and
-cost on this 8-state problem across all 5 independent seeds -- good
-evidence the DQN-style update is implemented correctly. The main
+achieved a mean evaluation cost consistent with the known optimum on this
+8-state problem across all 5 independent seeds -- good evidence the
+DQN-style update is implemented correctly. The main
 limitation is scale: an 8-state, 1575-parameter problem can't show what
 function approximation is actually for (generalizing across large or
 continuous state spaces), so nothing here says neural Q-learning scales
